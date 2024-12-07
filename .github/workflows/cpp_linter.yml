@@ -19,7 +19,7 @@ jobs:
   lint-cpp-new:
     runs-on: ubuntu-latest
     steps:
-      - run: apt update && sudo apt upgrade -y
+      - run: apt update && apt upgrade -y
       - run: apt install -y software-properties-common
       - run: add-apt-repository ppa:deadsnakes/ppa
       - run: apt update
