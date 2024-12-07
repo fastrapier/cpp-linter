@@ -16,3 +16,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  lint-cpp:
+    runs-on: fastrapier/cpplinter:latest
+    steps:
+      - run: cpplint --quiet --counting=detailed --linelength=120 --recursive ./
