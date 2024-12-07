@@ -13,4 +13,5 @@ jobs:
       - run: python3.12 get-pip.py
       - run: sudo pip install setuptools
       - run: sudo pip install cpplint
-      - run: cpplint --quiet --counting=detailed --linelength=120 --recursive ${{ github.workspace}}
+      - run: cpplint --help
+      - run: cpplint --counting=detailed --linelength=120 --recursive ${{ github.workspace}}
