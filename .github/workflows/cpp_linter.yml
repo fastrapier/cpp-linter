@@ -13,5 +13,7 @@ jobs:
       - run: python3.12 get-pip.py
       - run: sudo pip install setuptools
       - run: sudo pip install cpplint
-      - run: cpplint --help
-      - run: cpplint --counting=detailed --linelength=120 --recursive ${{ github.workspace}}
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: ls -la ${{ github.workspace }}
+      - run: cpplint --counting=detailed --recursive ${{ github.workspace}}
