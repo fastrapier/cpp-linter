@@ -19,14 +19,14 @@ jobs:
   lint-cpp-new:
     runs-on: ubuntu-latest
     steps:
-      - run: apt update && apt upgrade -y
-      - run: apt install -y software-properties-common
-      - run: add-apt-repository ppa:deadsnakes/ppa
-      - run: apt update
-      - run: apt install -y python3.12
-      - run: apt install -y python3.12-distutils
+      - run: sudo apt update && sudo apt upgrade -y
+      - run: sudo apt install -y software-properties-common
+      - run: sudo add-apt-repository ppa:deadsnakes/ppa
+      - run: sudo apt update
+      - run: sudo apt install -y python3.12
+      - run: sudo apt install -y python3.12-distutils
       - run: wget https://bootstrap.pypa.io/get-pip.py
       - run: python3.12 get-pip.py
-      - run: pip install cpplint
+      - run: sudo pip install cpplint
       - run: ls -la
       - run: cpplint --quiet --counting=detailed --linelength=120 --recursive ./
